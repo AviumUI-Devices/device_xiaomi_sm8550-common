@@ -1,1 +1,12 @@
 hal_client_domain(hal_audio_default, hal_dms)
+allow hal_audio_default vendor_file:file { read open getattr execute };
+allow hal_audio_default vendor_configs_file:file { read open getattr };
+
+#dolby
+hal_client_domain(hal_audio_default, vendor_hal_perf)
+allow hal_audio_default vendor_hal_perf_hwservice:hwservice_manager find;
+allow hal_audio_default vendor_hal_perf_default:binder call;
+allow hal_audio_default vendor_sysfs_devfreq:dir r_dir_perms;
+allow hal_audio_default vendor_sysfs_devfreq:file rw_file_perms;
+allow hal_audio_default sysfs:file r_file_perms;
+set_prop(hal_audio_default, vendor_audio_prop)
