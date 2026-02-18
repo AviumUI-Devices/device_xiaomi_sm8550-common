@@ -33,7 +33,7 @@
 
 # Media
 /vendor/bin/hw/vendor\.dolby\.hardware\.dms@2\.0-service u:object_r:hal_dms_default_exec:s0
-/vendor/bin/hw/dolbycodec2 u:object_r:vendorcodec_exec:s0
+#/vendor/bin/hw/dolbycodec2 u:object_r:vendorcodec_exec:s0
 /vendor/bin/hw/vendor\.dolby\.media\.c2@1\.0-service u:object_r:mediacodec_exec:s0
 
 # NFC
@@ -53,3 +53,9 @@
 /sys/{class,devices/virtual}/thermal/thermal_message/flash_state u:object_r:sys_thermal_flash_state:s0
 /sys/{class,devices/virtual}/thermal/thermal_message/torch_real_level u:object_r:sys_thermal_torch_real_level:s0
 /sys/{class,devices/virtual}/thermal/thermal_message/wifi_limit u:object_r:sys_thermal_wifi_limit:s0
+
+/vendor/lib64/soundfx/libswdap\.so                              u:object_r:vendor_file:s0
+/vendor/lib64/soundfx/libdlbvol\.so                             u:object_r:vendor_file:s0
+/vendor/lib64/soundfx/libswgamedap\.so                          u:object_r:vendor_file:s0
+/vendor/lib64/soundfx/libswvqe\.so                             u:object_r:vendor_file:s0
+/vendor/etc/audio/sku_kalama/audio_effects\.xml                u:object_r:vendor_configs_file:s0
